@@ -28,7 +28,7 @@ export default function handler(req, res) {
     ({ frontmatter: { title, excerpt, category } }) =>
       title.toLowerCase().indexOf(req.query.q) != -1 ||
       excerpt.toLowerCase().indexOf(req.query.q) != -1 ||
-      category.toLowerCase().indexOf(req.query.query) != -1
+      category.toLowerCase().indexOf(req.query.q) != -1
   );
 
   res.status(200).json(JSON.stringify({results}));
